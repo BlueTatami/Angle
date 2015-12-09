@@ -10,6 +10,7 @@
 		A61C2F761C188C1D00F79BE2 /* Angle.h in Headers */ = {isa = PBXBuildFile; fileRef = A61C2F751C188C1D00F79BE2 /* Angle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A61C2F7D1C188C1D00F79BE2 /* Angle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61C2F721C188C1D00F79BE2 /* Angle.framework */; };
 		A61C2F821C188C1D00F79BE2 /* AngleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C2F811C188C1D00F79BE2 /* AngleTests.swift */; };
+		A61C2F8D1C188CAF00F79BE2 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C2F8C1C188CAF00F79BE2 /* Angle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A61C2F7C1C188C1D00F79BE2 /* AngleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61C2F811C188C1D00F79BE2 /* AngleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleTests.swift; sourceTree = "<group>"; };
 		A61C2F831C188C1D00F79BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A61C2F8C1C188CAF00F79BE2 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A61C2F751C188C1D00F79BE2 /* Angle.h */,
+				A61C2F8C1C188CAF00F79BE2 /* Angle.swift */,
 				A61C2F771C188C1D00F79BE2 /* Info.plist */,
 			);
 			path = Angle;
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61C2F8D1C188CAF00F79BE2 /* Angle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 		A61C2F871C188C1D00F79BE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluetatami.Angle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A61C2F881C188C1D00F79BE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +383,7 @@
 				A61C2F881C188C1D00F79BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A61C2F891C188C1D00F79BE2 /* Build configuration list for PBXNativeTarget "AngleTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +392,7 @@
 				A61C2F8B1C188C1D00F79BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

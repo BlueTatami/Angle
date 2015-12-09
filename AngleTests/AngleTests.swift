@@ -26,11 +26,59 @@ class AngleTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    // Tests for correct initialisation from angle less than -360°
+    func testNormaliseBigNegative() {
+        let degrees: CGFloat    = -1000.0
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 80.0)
     }
     
+    // Tests for correct initialisation from angle between -360° and 0°
+    func testNormaliseSmallNegative() {
+        let degrees: CGFloat    = -200.0
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 160.0)
+    }
+    
+    // Tests for correct initialisation from 0°
+    func testNormaliseZero() {
+        let degrees: CGFloat    = 0.0
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 0.0)
+    }
+    
+    // Tests for correct initialisation from angle less than -360°
+    func testNormaliseWithinRangeNegative() {
+        let degrees: CGFloat    = 80
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 80.0)
+    }
+    
+    // Tests for correct initialisation from 360°
+    func testNormaliseThreeSixty() {
+        let degrees: CGFloat    = 360.0
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 0.0)
+    }
+    
+    // Tests for correct initialisation from angle larger than or equal to 360°
+    func testNormaliseOutOfRange() {
+        let degrees: CGFloat    = 1000.0
+        let angle               = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 280.0)
+    }
+    
+    // Tests for correct initialisation from pi / 2 radians
+    func testInitialiseFromRadians() {
+        let radians = M_PI_2
+        let angle   = Angle(radians: radians)
+        
+        XCTAssert(angle.degrees == 90.0)
+    }
 }
