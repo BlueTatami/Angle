@@ -8,10 +8,17 @@
 
 private let pi = CGFloat(M_PI)
 
+/// Struct acts as a wrapper for an angle value in degrees.
 public struct Angle {
+    /// Private stored variable, only variable in the struct.
     private var _degrees: CGFloat
     
-    // Returns an angle within the range 0..<360.0
+    /**
+        Returns an angle within the range 0..<360.0
+        
+        - parameter uncheckedDegrees: Degrees to be normalised.
+        - returns: Degrees within the range 0..<360.
+    */
     public static func normalise(uncheckedDegrees: CGFloat) -> CGFloat {
         if uncheckedDegrees < 0 {
             return uncheckedDegrees % 360.0 + 360
