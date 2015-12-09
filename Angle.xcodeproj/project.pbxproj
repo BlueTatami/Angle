@@ -11,6 +11,7 @@
 		A61C2F7D1C188C1D00F79BE2 /* Angle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61C2F721C188C1D00F79BE2 /* Angle.framework */; };
 		A61C2F821C188C1D00F79BE2 /* AngleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C2F811C188C1D00F79BE2 /* AngleTests.swift */; };
 		A61C2F8D1C188CAF00F79BE2 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C2F8C1C188CAF00F79BE2 /* Angle.swift */; };
+		A61C2F8F1C18953400F79BE2 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C2F8E1C18953400F79BE2 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		A61C2F811C188C1D00F79BE2 /* AngleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleTests.swift; sourceTree = "<group>"; };
 		A61C2F831C188C1D00F79BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A61C2F8C1C188CAF00F79BE2 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		A61C2F8E1C18953400F79BE2 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				A61C2F751C188C1D00F79BE2 /* Angle.h */,
 				A61C2F8C1C188CAF00F79BE2 /* Angle.swift */,
+				A61C2F8E1C18953400F79BE2 /* Operators.swift */,
 				A61C2F771C188C1D00F79BE2 /* Info.plist */,
 			);
 			path = Angle;
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61C2F8D1C188CAF00F79BE2 /* Angle.swift in Sources */,
+				A61C2F8F1C18953400F79BE2 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
