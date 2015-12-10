@@ -55,19 +55,19 @@ public struct Angle {
         }
     }
     
-    init(degrees: CGFloat) {
+    public init(degrees: CGFloat) {
         self._degrees = Angle.normalise(degrees)
     }
     
-    init(radians: CGFloat) {
+    public init(radians: CGFloat) {
         self._degrees = Angle.normalise(Angle.radiansToDegrees(radians))
     }
     
-    init(degrees: Double) {
+    public init(degrees: Double) {
         self.init(degrees: CGFloat(degrees))
     }
     
-    init(radians: Double) {
+    public init(radians: Double) {
         self.init(radians:CGFloat(radians))
     }
 }
