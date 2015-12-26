@@ -72,6 +72,13 @@ public struct Angle {
     }
 }
 
+// MARK: Equatable
+extension Angle: Equatable {}
+public func ==(lhs: Angle, rhs: Angle) -> Bool {
+    return lhs.degrees == rhs.degrees
+}
+
+// MARK: CustomStringConvertible
 extension Angle: CustomStringConvertible {
     public var description: String {
         return "\(degrees)°"
