@@ -18,32 +18,32 @@ public func - (lhs: Angle, rhs: Angle) -> Angle {
     return Angle(degrees: lhs.degrees - rhs.degrees)
 }
 
-public func * (left: CGFloat, right: Angle) -> Angle {
+public func * (left: Double, right: Angle) -> Angle {
     return Angle(degrees: left * right.degrees)
 }
 
-public func * (left: Angle, right: CGFloat) -> Angle {
+public func * (left: Angle, right: Double) -> Angle {
     return Angle(degrees: left.degrees * right)
 }
 
-public func / (left: Angle, right: CGFloat) -> Angle {
+public func / (left: Angle, right: Double) -> Angle {
     return Angle(degrees: left.degrees / right)
 }
 
 // MARK: Mutating operators
 
-public func += (inout left: Angle, right: Angle) {
+public func += (left: inout Angle, right: Angle) {
     left = left + right
 }
 
-public func -= (inout left: Angle, right: Angle) {
+public func -= (left: inout Angle, right: Angle) {
     left = left - right
 }
 
-public func *= (inout left: Angle, right: CGFloat) {
+public func *= (left: inout Angle, right: Double) {
     left = left * right
 }
 
-public func /= (inout left: Angle, right: CGFloat) {
+public func /= (left: inout Angle, right: Double) {
     left = left / right
 }

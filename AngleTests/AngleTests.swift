@@ -12,17 +12,17 @@ import XCTest
 class AngleTests: XCTestCase {
     
     func testConvertDegreesToRadians() {
-        let degrees = CGFloat(180.0)
+        let degrees = 180.0
         let radians = Angle.degreesToRadians(degrees)
         
-        XCTAssert(radians == CGFloat(M_PI))
+        XCTAssert(radians == Double.pi)
     }
     
     func testConvertRadiansToDegrees() {
-        let radians = CGFloat(M_PI)
+        let radians = Double.pi
         let degrees = Angle.radiansToDegrees(radians)
         
-        XCTAssert(degrees == CGFloat(180.0))
+        XCTAssert(degrees == 180.0)
     }
     
     func testDegreesSetter() {
@@ -35,67 +35,71 @@ class AngleTests: XCTestCase {
     func testRadiansGetter() {
         let angle       = Angle(degrees: 90.0)
         
-        XCTAssert(angle.radians == CGFloat(M_PI_2))
+        XCTAssert(angle.radians == Double.pi / 2)
     }
     
     func testRadiansSetter() {
         var angle       = Angle(degrees: 40.0)
-        angle.radians   = CGFloat(M_PI_2)
+        angle.radians   = Double.pi / 2
         
         XCTAssert(angle.degrees == 90.0)
     }
     
     // Tests for correct initialisation from angle less than -360°
     func testNormaliseBigNegative() {
-        let degrees: CGFloat    = -1000.0
-        let angle               = Angle(degrees: degrees)
+        let degrees = -1000.0
+        var angle = Angle(degrees: degrees)
+        
+        XCTAssert(angle.degrees == 80.0)
+        
+        angle.degrees = degrees
         
         XCTAssert(angle.degrees == 80.0)
     }
     
     // Tests for correct initialisation from angle between -360° and 0°
     func testNormaliseSmallNegative() {
-        let degrees: CGFloat    = -200.0
-        let angle               = Angle(degrees: degrees)
+        let degrees = -200.0
+        let angle = Angle(degrees: degrees)
         
         XCTAssert(angle.degrees == 160.0)
     }
     
     // Tests for correct initialisation from 0°
     func testNormaliseZero() {
-        let degrees: CGFloat    = 0.0
-        let angle               = Angle(degrees: degrees)
+        let degrees = 0.0
+        let angle = Angle(degrees: degrees)
         
         XCTAssert(angle.degrees == 0.0)
     }
     
     // Tests for correct initialisation from angle less than -360°
     func testNormaliseWithinRangeNegative() {
-        let degrees: CGFloat    = 80
-        let angle               = Angle(degrees: degrees)
+        let degrees = 80.0
+        let angle = Angle(degrees: degrees)
         
         XCTAssert(angle.degrees == 80.0)
     }
     
     // Tests for correct initialisation from 360°
     func testNormaliseThreeSixty() {
-        let degrees: CGFloat    = 360.0
-        let angle               = Angle(degrees: degrees)
+        let degrees = 360.0
+        let angle = Angle(degrees: degrees)
         
         XCTAssert(angle.degrees == 0.0)
     }
     
     // Tests for correct initialisation from angle larger than or equal to 360°
     func testNormaliseOutOfRange() {
-        let degrees: CGFloat    = 1000.0
-        let angle               = Angle(degrees: degrees)
+        let degrees = 1000.0
+        let angle = Angle(degrees: degrees)
         
         XCTAssert(angle.degrees == 280.0)
     }
     
     // Tests for correct initialisation from pi / 2 radians
     func testInitialiseFromRadians() {
-        let radians = M_PI_2
+        let radians = Double.pi / 2
         let angle   = Angle(radians: radians)
         
         XCTAssert(angle.degrees == 90.0)
@@ -138,7 +142,7 @@ class AngleTests: XCTestCase {
     }
     
     func testMultiplyLeft() {
-        let left    = CGFloat(2.0)
+        let left    = 2.0
         let right   = Angle(degrees: 20.0)
         
         let sum     = left * right
@@ -148,7 +152,7 @@ class AngleTests: XCTestCase {
     
     func testMultiplyRight() {
         let left    = Angle(degrees: 20.0)
-        let right   = CGFloat(2.0)
+        let right   = 2.0
         
         let sum     = left * right
         
@@ -157,7 +161,7 @@ class AngleTests: XCTestCase {
     
     func testDivide() {
         let left    = Angle(degrees: 40.0)
-        let right   = CGFloat(2.0)
+        let right   = 2.0
         
         let sum     = left / right
         
@@ -184,7 +188,7 @@ class AngleTests: XCTestCase {
     
     func testMultiplyMutateAngle() {
         var first   = Angle(degrees: 40.0)
-        let second  = CGFloat(3.0)
+        let second  = 3.0
         first      *= second
         
         XCTAssert(first.degrees == 120.0)
@@ -192,7 +196,7 @@ class AngleTests: XCTestCase {
     
     func testDivideMutateAngle() {
         var first   = Angle(degrees: 40.0)
-        let second  = CGFloat(4.0)
+        let second  = 4.0
         
         first      /= second
         
